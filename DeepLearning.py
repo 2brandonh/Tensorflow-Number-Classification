@@ -1,7 +1,8 @@
-//This file was originally a Jupyter file written in Pycharm. 
-//Each //#%% corresponds to a new cell within Jupyter
+# README
+# This file was originally a Jupyter file written in Pycharm. 
+# Each #%% corresponds to a new cell within Jupyter
 
-//#%%
+#%%
 
 import tensorflow as tf  # deep learning library. Tensors are just multi-dimensional arrays
 import numpy as np
@@ -25,31 +26,31 @@ model.compile(optimizer='adam',  # Good default optimizer to start with, one I l
 
 model.fit(x_train, y_train, epochs=4)  # train the model
 
-//#%%
+#%%
 
 val_loss, val_acc = model.evaluate(x_test, y_test)
 print(val_loss) # too much loss will result in memorization of the set (overfitting) or no accuracy
 print(val_acc)
 
-//#%%
+#%%
 
 model.save('num_reader.model')
 
-//#%%
+#%%
 
 import tensorflow as tf
 new_model = tf.keras.models.load_model('num_reader.model')
 
-//#%%
+#%%
 
 predictions = new_model.predict(np.array([x_test]))
 # arg max returns element with highest value (probability)
 
-//#%%
+#%%
 
 print(predictions)
 
-//#%%
+#%%
 
 import ipywidgets as widgets
 import matplotlib.pyplot as plt
@@ -80,7 +81,7 @@ def rand():
     plt.imshow(x_test[x],cmap=plt.cm.binary)
     plt.show()
 
-//#%%
+#%%
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -109,18 +110,18 @@ plt.show()
 
 # NEEDED PIL FOR THIS APPARENTLY
 
-//#%%
+#%%
 
 img_array = np.array(img_array).reshape(-1, 28, 28) # need -1 so total size remains constant
 print(np.argmax(new_model.predict(img_array)))
 
-//#%%
+#%%
 
 print(img_array)
 #plt.imshow(x_test[1],cmap=plt.cm.binary)
 #print(np.argmax(predictions[1]))
 
-//#%%
+#%%
 
 # testing function should be CLEAR SAVE PREDICT
 from numpy import complex, array
