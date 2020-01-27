@@ -1,3 +1,6 @@
+//This file was originally a Jupyter file written in Pycharm. 
+//Each //#%% corresponds to a new cell within Jupyter
+
 //#%%
 
 import tensorflow as tf  # deep learning library. Tensors are just multi-dimensional arrays
